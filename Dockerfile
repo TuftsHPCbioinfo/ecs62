@@ -6,4 +6,4 @@ LABEL maintainer="Yucheng Zhang <Yucheng.Zhang@tufts.edu>"
 # Help message
 LABEL description="This container is for Tufts Climate Modeling ECS62"
 
-RUN conda install -c conda-forge climlab
+RUN conda install -c conda-forge climlab=0.8.2
