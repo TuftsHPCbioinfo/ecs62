@@ -1,4 +1,4 @@
-FROM tuftsttsrt/miniforge:24.11.2
+FROM tuftsttsrt/miniconda:24.11.1
 
 # Author label
 LABEL maintainer="Yucheng Zhang <Yucheng.Zhang@tufts.edu>"
