@@ -7,7 +7,7 @@ LABEL maintainer="Yucheng Zhang <Yucheng.Zhang@tufts.edu>"
 LABEL description="This container is for Tufts Climate Modeling ECS62"
 
 # Install ffmpeg
-RUN apt-get update && sudo apt-get install -y ffmpeg
+RUN apt-get update && apt-get install -y ffmpeg
 
 # Copy spec file first (avoid unnecessary rebuilds)
 COPY spec-file.txt /tmp/spec-file.txt
