@@ -6,6 +6,9 @@ LABEL maintainer="Yucheng Zhang <Yucheng.Zhang@tufts.edu>"
 # Help message
 LABEL description="This container is for Tufts Climate Modeling ECS62"
 
+# Install ffmpeg
+RUN apt-get update && sudo apt-get install -y ffmpeg
+
 # Copy spec file first (avoid unnecessary rebuilds)
 COPY spec-file.txt /tmp/spec-file.txt
 
@@ -18,4 +21,4 @@ RUN mkdir -p /opt/conda/envs && \
 ENV PATH="/opt/conda/envs/ecs62/bin:$PATH"
 
 # Install additional Python packages in a single RUN to reduce layers
-RUN pip install --no-cache-dir matplotlib metpy netCDF4 ipython ipykernel
+RUN pip install --no-cache-dir matplotlib metpy netCDF4 ipython ipykernel ffmpeg
