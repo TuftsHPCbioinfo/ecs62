@@ -17,6 +17,8 @@ RUN mkdir -p /opt/conda/envs && \
     conda create -p /opt/conda/envs/ecs62 --file /tmp/spec-file.txt && \
     conda clean --all -y
 
+RUN conda install conda-forge::geos
+
 # Set the environment path (ensure new env is active)
 ENV PATH="/opt/conda/envs/ecs62/bin:$PATH"
 
