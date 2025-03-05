@@ -14,11 +14,11 @@ COPY spec-file.txt /tmp/spec-file.txt
 
 # Create the Conda environment
 RUN mkdir -p /opt/conda/envs && \
-    conda create -p /opt/conda/envs/ecs62 --file /tmp/spec-file.txt && \
+    conda create -p /opt/conda/envs/ecs62 --file /tmp/spec-file.txt cartopy  esmvaltool && \
     conda clean --all -y
 
 # Set the environment path (ensure new env is active)
 ENV PATH="/opt/conda/envs/ecs62/bin:$PATH"
 
 # Install additional Python packages in a single RUN to reduce layers
-RUN pip install --no-cache-dir matplotlib metpy netCDF4 ipython ipykernel ffmpeg cartopy
+RUN pip install --no-cache-dir matplotlib metpy netCDF4 ipython ipykernel ffmpeg 
