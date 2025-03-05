@@ -14,7 +14,8 @@ COPY spec-file.txt /tmp/spec-file.txt
 
 # Create the Conda environment
 RUN mkdir -p /opt/conda/envs && \
-    conda create -p /opt/conda/envs/ecs62 --file /tmp/spec-file.txt cartopy  esmvaltool && \
+    conda create -p /opt/conda/envs/ecs62 --file /tmp/spec-file.txt && \
+    conda install -p /opt/conda/envs/ecs62 cartopy esmvaltool && \
     conda clean --all -y
 
 # Set the environment path (ensure new env is active)
