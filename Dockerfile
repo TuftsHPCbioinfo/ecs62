@@ -22,4 +22,4 @@ RUN mkdir -p /opt/conda/envs && \
 ENV PATH="/opt/conda/envs/ecs62/bin:$PATH"
 
 # Install additional Python packages in a single RUN to reduce layers
-RUN pip install --no-cache-dir matplotlib metpy netCDF4 ipython ipykernel ffmpeg 
+RUN pip install --no-cache-dir matplotlib metpy netCDF4  "xarray[complete]" ipython ipykernel ffmpeg 
